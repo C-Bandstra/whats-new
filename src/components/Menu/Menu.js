@@ -2,8 +2,6 @@ import React from 'react';
 import './Menu.css'
 import NewsContainer from '../NewsContainer/NewsContainer'
 
-// MENU COMPONENT CODE GOES HERE
-
 const Menu = (props) => {
   const topicTitles = Object.keys(props.topics)
   const topicList = topicTitles.map(topic => {
