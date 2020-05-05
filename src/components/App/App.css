@@ -2,12 +2,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .app {
   display: flex;
   background: #141527;
+  color: white;
   height: 100vh;
   text-align: center;
+  flex-direction: column;
   width: 100%;
 }
