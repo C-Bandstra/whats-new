@@ -1,0 +1,30 @@
+.topic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 25%;
+  background: #141527;
+  margin-top: 2%;
+}
+
+.topic-list {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.topic {
+  font-size: 1.5em;
+  height: 10%;
+  margin-top: 20%;
+}
+
+.title {
+  font-size: 2em;
+}
+
+.span-title {
+  color: #F9C22E;
+}
