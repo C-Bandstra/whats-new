@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
-  width: 25%;
+  width: 20%;
   background: #141527;
   margin-top: 2%;
 }
@@ -19,6 +19,14 @@
   font-size: 1.5em;
   height: 10%;
   margin-top: 20%;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.topic:focus {
+  color: #F9C22E;
+  outline: none;
 }
 
 .title {

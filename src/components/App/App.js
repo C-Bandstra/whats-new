@@ -7,25 +7,40 @@ import health from '../../data/health';
 import './App.css';
 import Menu from '../Menu/Menu'
 import SearchForm from '../SearchForm/SearchForm'
+import NewsContainer from '../NewsContainer/NewsContainer'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       allArticles: {local, technology, entertainment, science, health},
-      selected: local,
+      selected: 'local',
+      results: []
     }
   }
 
-  updateSelected(topic) {
-    this.setState({selected: topic})
+  search = (value) => {
+    let results = this.state.allArticles[this.state.selected].filter(article => article.headline.includes(value))
+    this.setState({results: results})
   }
 
-  render () {
+  updateSelected = (e) => {
+    const selected = e.target.id;
+    this.setState({selected: selected});
+    this.setState({results: []});
+  }
+
+  render = () => {
     return (
       <div className="app">
-        <Menu topics={this.state.allArticles}/>
-        <SearchForm />
+        <Menu selectTopic={this.updateSelected} topics={this.state.allArticles}/>
+        <section className="right-main">
+          <SearchForm search={this.search}/>
+          <NewsContainer 
+            articles={this.state.allArticles[this.state.selected]}
+            results={this.state.results}
+          />
+        </section>
       </div>
     );
   }
