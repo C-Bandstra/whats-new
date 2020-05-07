@@ -22,5 +22,4 @@ describe('Menu', ()=> {
     fireEvent.click(healthBtn)
     expect(mockUpdateSelected).toHaveBeenCalled();
   })
-  
 })
