@@ -6,7 +6,7 @@ const Menu = (props) => {
   const topicsToRender = topicTitles.map(topic => {
     let properTitle = topic.charAt(0).toUpperCase() + topic.slice(1)
     return (
-      <button autoFocus={true} onClick={props.selectTopic} className="topic" id={topic} key={topic}>{properTitle}</button>
+      <button onClick={props.selectTopic} className="topic" id={topic} key={topic}>{properTitle}</button>
     )
   });
 

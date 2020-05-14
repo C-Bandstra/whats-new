@@ -1,9 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
 import App from './App';
+import '@testing-library/jest-dom';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('App', () => {
+  it('renders without crashing', () => {
+    render(<App />);
+  });
+
+  it('Should load the app', () => {
+    const { container } = render(<App />);
+    const app = container.firstChild
+    expect(app).toHaveClass('app')
+    expect(app).toBeInTheDocument()
+  })
+
+
+})
+
